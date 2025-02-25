@@ -30,11 +30,14 @@ const Login = () => {
 
   return (
     <div>
-      <button onClick={handleGoogleSignIn} className="">
-        Login with Google
-      </button>
-
-      {user && (
+      {user ? (
+        <div>
+          <button onClick={handleGoogleSignIn} className="btn m">
+            Login with Google
+          </button>
+          <button className="btn">Login With GitHub</button>
+        </div>
+      ) : (
         <div>
           <h4 className="text-4xl"> Name: {user.displayName} </h4>
           <p className="text-2xl">Email: {user.email} </p>
